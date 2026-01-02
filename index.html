@@ -10,21 +10,21 @@
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <link rel="manifest" href="favicon/site.webmanifest" />
   <style>
-    .player {
+    .wonder-player {
       display: flex;
       flex-direction: column;
       width: 1000px;
       height: 800px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 1);
     }
-    .player-container {
+    .wp-container {
       flex-grow: 1;
     }
-    .player-background {
+    .wp-background {
       display: flex;
       background-color: black;
     }
-    .player-button {
+    .wp-button {
       flex-grow: 0;
       border-style: none;
       cursor: pointer;
@@ -32,7 +32,7 @@
       height: 40px;
       width: 40px;
     }
-    .player-icon {
+    .wp-icon {
       color: white;
       display: flex;
       align-items: center;
@@ -42,24 +42,24 @@
   </style>
 </head>
 <body>
-  <div id="player" class="player">
-    <div class="js-video-container player-container"></div>
-    <div class="player-background">
-      <button class="js-play-button player-button">
-        <i class="fa fa-play player-icon" aria-hidden="true"></i>
+  <div id="player" class="wonder-player">
+    <div class="js-video-container wp-container"></div>
+    <div class="wp-background">
+      <button class="js-play-button wp-button">
+        <i class="fa fa-play wp-icon" aria-hidden="true"></i>
       </button>
-      <button class="js-pause-button player-button" hidden>
-        <i class="fa fa-pause player-icon" aria-hidden="true"></i>
+      <button class="js-pause-button wp-button" hidden>
+        <i class="fa fa-pause wp-icon" aria-hidden="true"></i>
       </button>
-      <button class="js-volume-button player-button">
-        <i class="fa fa-volume-off player-icon" aria-hidden="true"></i>
+      <button class="js-volume-button wp-button">
+        <i class="fa fa-volume-off wp-icon" aria-hidden="true"></i>
       </button>
-      <button class="js-mute-button player-button" hidden>
-        <i class="fa fa-volume-up player-icon" aria-hidden="true"></i>
+      <button class="js-mute-button wp-button" hidden>
+        <i class="fa fa-volume-up wp-icon" aria-hidden="true"></i>
       </button>
       <div style="flex-grow: 1;"></div>
-      <button class="js-fullscreen-button player-button">
-        <i class="fa fa-arrows-alt player-icon" aria-hidden="true"></i>
+      <button class="js-fullscreen-button wp-button">
+        <i class="fa fa-arrows-alt wp-icon" aria-hidden="true"></i>
       </button>
     </div>
   </div>
