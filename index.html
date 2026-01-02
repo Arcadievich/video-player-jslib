@@ -16,7 +16,7 @@
       flex-grow: 1;
     }
     .player-background {
-      flex-grow: 0;
+      display: flex;
       background-color: black;
     }
     .player-button {
@@ -51,6 +51,10 @@
       </button>
       <button class="js-mute-button player-button" hidden>
         <i class="fa fa-volume-up player-icon" aria-hidden="true"></i>
+      </button>
+      <div style="flex-grow: 1;"></div>
+      <button class="js-fullscreen-button player-button">
+        <i class="fa fa-arrows-alt player-icon" aria-hidden="true"></i>
       </button>
     </div>
   </div>
