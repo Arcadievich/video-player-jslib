@@ -30,6 +30,9 @@
     .wonder-player .left-buttons {
       display: flex;
     }
+    .wonder-player .right-buttons {
+      display: flex;
+    }
     .wonder-player .viewing-panel {
       display: flex;
       flex-grow: 1;
@@ -56,7 +59,34 @@
       font-size: larger;
     }
     .wonder-player .viewing-progressbar {
+      height: 6px;
+      display: flex;
       flex-grow: 1;
+      margin-left: 18px;
+      margin-right: 18px;
+      border-radius: 5px;
+      background-color: grey;
+    }
+    .wonder-player .viewing-progressbar--slider {
+      border-radius: 5px;
+      background-color: red; 
+    }
+    .wonder-player .cirle {
+      display: flex;
+      align-items: center;
+      margin: -8px;
+      cursor: pointer;
+    }
+    .wonder-player .dot {
+      height: 9px;
+      width: 9px;
+      background-color: red;
+      border-radius: 50%;
+      border-style: solid;
+      border-width: 4px;
+      border-color: white;
+      display: inline-block;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 1);
     }
   </style>
 </head>
@@ -86,7 +116,12 @@
         <div class="viewing-time">
           <span class="js-current-time"></span>
         </div>
-        <div class="viewing-progressbar"></div>
+        <div class="js-progress viewing-progressbar">
+          <div class="js-progress-slider viewing-progressbar--slider"></div>
+          <div class="cirle">
+            <span class="dot"></span>
+          </div>
+        </div>
         <div class="video-duration viewing-time">
           <span class="js-duration"></span>
         </div>
