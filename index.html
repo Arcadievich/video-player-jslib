@@ -9,6 +9,9 @@
   <link rel="shortcut icon" href="favicon/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
   <link rel="manifest" href="favicon/site.webmanifest" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
     .wonder-player {
       display: flex;
@@ -17,14 +20,22 @@
       height: 750px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 1);
     }
-    .wp-container {
+    .wonder-player .screen {
       flex-grow: 1;
     }
-    .wp-background {
+    .wonder-player .bottom-controls {
       display: flex;
       background-color: black;
     }
-    .wp-button {
+    .wonder-player .left-buttons {
+      display: flex;
+    }
+    .wonder-player .viewing-panel {
+      display: flex;
+      flex-grow: 1;
+      align-items: center;
+    }
+    .wonder-player .player-button {
       flex-grow: 0;
       border-style: none;
       cursor: pointer;
@@ -32,37 +43,64 @@
       height: 55px;
       width: 45px;
     }
-    .wp-icon {
+    .wonder-player .btn-icon {
       color: white;
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: x-large;
     }
+    .wonder-player .viewing-time {
+      color: white;
+      font-family: "Roboto", sans-serif;
+      font-size: larger;
+    }
+    .wonder-player .viewing-progressbar {
+      flex-grow: 1;
+    }
   </style>
 </head>
 <body>
-  <div id="player" class="wonder-player">
-    <div class="js-video-container wp-container"></div>
-    <div class="wp-background">
-      <button class="js-play-button wp-button">
-        <i class="fa fa-play wp-icon" aria-hidden="true"></i>
-      </button>
-      <button class="js-pause-button wp-button" hidden>
-        <i class="fa fa-pause wp-icon" aria-hidden="true"></i>
-      </button>
-      <button class="js-volume-button wp-button">
-        <i class="fa fa-volume-off wp-icon" aria-hidden="true"></i>
-      </button>
-      <button class="js-mute-button wp-button" hidden>
-        <i class="fa fa-volume-up wp-icon" aria-hidden="true"></i>
-      </button>
-      <div style="flex-grow: 1;"></div>
-      <button class="js-fullscreen-button wp-button">
-        <i class="fa fa-arrows-alt wp-icon" aria-hidden="true"></i>
-      </button>
+  <div id="player" class="wonder-player">   <!-- Плеер -->
+    <div class="js-video-container screen"></div>
+    <div class="bottom-controls">
+      <div class="left-buttons">   <!-- Левые кнопки -->
+        <div class="play-button">
+          <button class="js-play-button player-button">
+            <i class="fa fa-play btn-icon" aria-hidden="true"></i>
+          </button>
+          <button class="js-pause-button player-button">
+            <i class="fa fa-pause btn-icon" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="volume-button">
+          <button class="js-volume-button player-button">
+            <i class="fa fa-volume-off btn-icon" aria-hidden="true"></i>
+          </button>
+          <button class="js-mute-button player-button">
+            <i class="fa fa-volume-up btn-icon" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
+      <div class="viewing-panel">   <!-- Панель прогресса -->
+        <div class="viewing-time">
+          <span class="js-current-time"></span>
+        </div>
+        <div class="viewing-progressbar"></div>
+        <div class="video-duration viewing-time">
+          <span class="js-duration"></span>
+        </div>
+      </div>
+      <div class="right-buttons">   <!-- Правые кнопки -->
+        <div class="fullscreen-button">
+          <button class="js-fullscreen-button player-button">
+            <i class="fa fa-arrows-alt btn-icon" aria-hidden="true"></i>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
+
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://unpkg.com/playable@2.10.3/dist/statics/playable.bundle.min.js"></script>
   <script src="player.js"></script>
