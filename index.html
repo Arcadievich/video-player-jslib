@@ -3,6 +3,7 @@
 <head>
   <title>Пример подключения плеера</title>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="normalize.css">
   <link rel="stylesheet" href="font-awesome-4.7.0\css\font-awesome.min.css">
   <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
@@ -45,6 +46,10 @@
       background-color: rgb(0, 0, 0, 0);
       height: 55px;
       width: 45px;
+    }
+    .wonder-player .player-button:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(220, 66, 66, 0.5);
     }
     .wonder-player .btn-icon {
       color: white;
